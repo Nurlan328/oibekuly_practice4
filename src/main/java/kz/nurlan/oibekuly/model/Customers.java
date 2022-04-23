@@ -24,7 +24,7 @@ import java.util.Date;
 @Component
 @Entity(name = "customers")
 @Table(name = "customers")
-public class Customers implements Serializable {
+public class Customers  {
     @Id
     @Column(name = "customer_id")
     @ApiModelProperty(notes = "Customer Id",name="customer_id",required=true,value="1")

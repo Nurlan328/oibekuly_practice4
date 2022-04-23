@@ -1,11 +1,3 @@
--- CREATE TABLE IF NOT EXISTS Attachment (
---     id VARCHAR(60),
---     fileName VARCHAR(60),
---     fileType VARCHAR(60),
---     data bytea
---
--- );
-
 CREATE TABLE IF NOT EXISTS bank (
    bank_id int  not null ,
    bankname VARCHAR(60),
@@ -32,14 +24,16 @@ CREATE TABLE IF NOT EXISTS account (
    interest double precision,
    PRIMARY KEY (account_id)
 );
-
+--
 -- select * from account;
 -- select * from bank;
 -- select * from customers;
--- select * from Attachment;
---
+
+select * from  roles;
+select * from users;
+select * from user_roles;
+
 -- drop table customers;
 -- drop table account;
 -- drop table bank;
--- drop table Attachment;
 

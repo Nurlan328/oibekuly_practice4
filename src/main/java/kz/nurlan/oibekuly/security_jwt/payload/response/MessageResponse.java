@@ -1,4 +1,4 @@
-package kz.nurlan.oibekuly.security_jwt.req_res.response;
+package kz.nurlan.oibekuly.security_jwt.payload.response;
 
 public class MessageResponse {
     private String message;

@@ -1,4 +1,4 @@
-package kz.nurlan.oibekuly.security_jwt.req_res.request;
+package kz.nurlan.oibekuly.security_jwt.payload.request;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

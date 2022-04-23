@@ -48,3 +48,18 @@ insert into customers (customer_id,firstname, lastname, age, address, iin, isReg
 insert into customers (customer_id,firstname, lastname, age, address, iin, isRegistered, dateOfBirth) VALUES (15,'MORRIS ', 'ROGERS', 21, 'South Carolina', '014819484935', true, '1993-12-01');
 
 
+insert into users values (
+                             1, 'admin@bezkoder.com',  ' $2a$10$4K8Vq5mw.nwxl.WRmuYCfevme82c73uGkEcnPbmm/3/YJ3UToie7m','admin'
+                         );
+insert into users values (2, 'mod@bezkoder.com','$2a$10$1dCKuQoQqbBNCK.Rb8XQSemwqdHdVAcCTb1kUQLg2key/4VX./TvS', 'mod');
+insert into users values (3,'user@bezkoder.com', '$2a$10$e9Mgd/63paPL0VBj232BH.tQvIgQu0/tBg/rwfyDVMUcQc8djEPle', 'zkoder');
+
+
+insert into roles values (1, 'ROLE_USER');
+insert into roles values (2, 'ROLE_MODERATOR');
+insert into roles values (3, 'ROLE_ADMIN');
+
+insert into  user_roles values (1, 3);
+insert into  user_roles values (2, 1);
+insert into  user_roles values (2, 2);
+insert into  user_roles values (3, 1);

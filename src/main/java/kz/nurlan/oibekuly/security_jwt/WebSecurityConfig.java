@@ -1,8 +1,8 @@
 package kz.nurlan.oibekuly.security_jwt;
 
-import kz.iitu.itse1910.nurlan.oibekuly.security_jwt.jwt.AuthEntryPointJwt;
-import kz.iitu.itse1910.nurlan.oibekuly.security_jwt.jwt.AuthTokenFilter;
-import kz.iitu.itse1910.nurlan.oibekuly.service.UserDetailsServiceImpl;
+import kz. nurlan.oibekuly.security_jwt.jwt.AuthEntryPointJwt;
+import kz. nurlan.oibekuly.security_jwt.jwt.AuthTokenFilter;
+import kz. nurlan.oibekuly.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -60,7 +60,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests().antMatchers("/api/auth/**").permitAll()
-//                .antMatchers("/api/test/**").permitAll()
+                .antMatchers("/api/test/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .rememberMe().key(jwtSecret).tokenValiditySeconds(86400);

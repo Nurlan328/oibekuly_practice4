@@ -1,7 +1,7 @@
 package kz.nurlan.oibekuly.security_jwt.jwt;
 
 import io.jsonwebtoken.*;
-import kz.iitu.itse1910.nurlan.oibekuly.service.UserDetailsImpl;
+import kz. nurlan.oibekuly.service.UserDetailsImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

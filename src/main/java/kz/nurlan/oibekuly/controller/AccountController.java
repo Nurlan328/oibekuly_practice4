@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import kz.nurlan.oibekuly.dto.AccountRequestDto;
-import kz.nurlan.oibekuly.kafka.KafkaProducer;
+//import kz.nurlan.oibekuly.kafka.KafkaProducer;
 import kz.nurlan.oibekuly.model.Account;
 import kz.nurlan.oibekuly.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +22,15 @@ public class AccountController {
 
     private AccountService accountService;
 
-    public KafkaProducer kafkaProducer;
+//    public KafkaProducer kafkaProducer;
+//    @Autowired
+//    public AccountController(AccountService accountService, KafkaProducer kafkaProducer) {
+//        this.accountService = accountService;
+//        this.kafkaProducer = kafkaProducer;
+//    }
     @Autowired
-    public AccountController(AccountService accountService, KafkaProducer kafkaProducer) {
+    public AccountController(AccountService accountService) {
         this.accountService = accountService;
-        this.kafkaProducer = kafkaProducer;
     }
 
     @PostMapping(value = "/msg")
@@ -36,7 +40,7 @@ public class AccountController {
                                         @RequestParam("interest") double interest)
     {
         AccountRequestDto accountRequestDto = new AccountRequestDto(accountnumber,balance,interest);
-        this.kafkaProducer.sendOrder(msgId,accountRequestDto);
+//        this.kafkaProducer.sendOrder(msgId,accountRequestDto);
     }
 
 
