@@ -114,6 +114,7 @@ public class CustomersController {
                 "Was the optional header present? %s!",
                 (optionalHeader == null ? "No" : "Yes")),HttpStatus.OK);
     }
+
     public String getCustomerStatus(Integer customer_id) {
         return "Inactive";
     }

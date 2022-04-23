@@ -13,10 +13,12 @@ public class CustomerReceiver {
 
     @JmsListener(destination = "withDrawReceiver")
     public void notifyWithdrawing(double amount) {
+
         if (isWithdraw) {
             System.out.println("Notifying that there is been a withdraw of " + amount + " tenge");
             System.out.println("If it was not you. Block your card!");
         }
+
         if (security_block) {
             isBlocked = true;
         }
