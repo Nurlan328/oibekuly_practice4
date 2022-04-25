@@ -61,7 +61,7 @@ class CustomersControllerTest1 {
         customers.setAge(1);
         customers.setCustomer_id(1);
         LocalDateTime atStartOfDayResult = LocalDate.of(1970, 1, 1).atStartOfDay();
-        customers.setDateOfBirth(Date.from(atStartOfDayResult.atZone(ZoneId.of("UTC")).toInstant()));
+        customers.setDateOfBirth(LocalDate.from(atStartOfDayResult.atZone(ZoneId.of("UTC")).toInstant()));
         customers.setFirstname("Jane");
         customers.setIin("https://example.org/example");
         customers.setLastname("Doe");
@@ -127,7 +127,7 @@ class CustomersControllerTest1 {
         customers.setAge(1);
         customers.setCustomer_id(1);
         LocalDateTime atStartOfDayResult = LocalDate.of(1970, 1, 1).atStartOfDay();
-        customers.setDateOfBirth(Date.from(atStartOfDayResult.atZone(ZoneId.of("UTC")).toInstant()));
+        customers.setDateOfBirth(LocalDate.from(atStartOfDayResult.atZone(ZoneId.of("UTC")).toInstant()));
         customers.setFirstname("Jane");
         customers.setIin("017383948394834");
         customers.setLastname("Doe");
@@ -152,7 +152,7 @@ class CustomersControllerTest1 {
         customers.setAge(1);
         customers.setCustomer_id(1);
         LocalDateTime atStartOfDayResult = LocalDate.of(1970, 1, 1).atStartOfDay();
-        customers.setDateOfBirth(Date.from(atStartOfDayResult.atZone(ZoneId.of("UTC")).toInstant()));
+        customers.setDateOfBirth(LocalDate.from(atStartOfDayResult.atZone(ZoneId.of("UTC")).toInstant()));
         customers.setFirstname("Jane");
         customers.setIin("https://example.org/example");
         customers.setLastname("Doe");

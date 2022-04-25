@@ -13,9 +13,7 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -61,12 +59,12 @@ public class Customers  {
 
     @Column(name = "isRegistered")
     @ApiModelProperty(notes = "Customer isRegistered",name="isRegistered",required=true,value=" test isRegistered")
-    private boolean isRegistered;
+    public boolean isRegistered;
 
     @NotNull
     @Column(name = "dateOfBirth")
     @ApiModelProperty(notes = "Customer dateOfBirth",name="dateOfBirth",required=true,value=" test dateOfBirth")
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
     public Customers(String firstname) {
         this.firstname = firstname;

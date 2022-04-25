@@ -29,9 +29,9 @@ CREATE TABLE IF NOT EXISTS account (
 -- select * from bank;
 -- select * from customers;
 
-select * from  roles;
-select * from users;
-select * from user_roles;
+-- select * from  roles;
+-- select * from users;
+-- select * from user_roles;
 
 -- drop table customers;
 -- drop table account;

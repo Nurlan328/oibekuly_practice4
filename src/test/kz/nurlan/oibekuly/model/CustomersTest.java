@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -15,9 +17,10 @@ class CustomersTest {
 
     @Mock
     Date dateOfBirth;
+    LocalDateTime date = LocalDate.of(1970, 1, 1).atStartOfDay();
 
-    Date date = new Date(1993, Calendar.JANUARY, 1);
-    Customers customers = new Customers(0, "Jason", "Steve", 22, "Massachusets", "9876543", true, date);
+//    Date date = new Date(1993, Calendar.JANUARY, 1);
+    Customers customers = new Customers(0, "Jason", "Steve", 22, "Massachusets", "9876543", true, LocalDate.from(date));
 
     @BeforeEach
     void setUp() {
@@ -68,7 +71,8 @@ class CustomersTest {
 
     @Test
     void testSetDateOfBirth() {
-        customers.setDateOfBirth(new GregorianCalendar(2022, Calendar.APRIL, 15, 15, 33).getTime());
+        LocalDateTime atStartOfDayResult = LocalDate.of(1970, 1, 1).atStartOfDay();
+        customers.setDateOfBirth(LocalDate.from(atStartOfDayResult));
     }
 
 //    @Test

@@ -65,7 +65,7 @@ class CustomersServiceTest {
         customers.setAge(1);
         customers.setCustomer_id(1);
         LocalDateTime atStartOfDayResult = LocalDate.of(1970, 1, 1).atStartOfDay();
-        customers.setDateOfBirth(Date.from(atStartOfDayResult.atZone(ZoneId.of("UTC")).toInstant()));
+        customers.setDateOfBirth(LocalDate.from(atStartOfDayResult.atZone(ZoneId.of("UTC")).toInstant()));
         customers.setFirstname("Jane");
         customers.setIin("https://example.org/example");
         customers.setLastname("Doe");
@@ -83,7 +83,7 @@ class CustomersServiceTest {
         customers.setAge(1);
         customers.setCustomer_id(1);
         LocalDateTime atStartOfDayResult = LocalDate.of(1970, 1, 1).atStartOfDay();
-        customers.setDateOfBirth(Date.from(atStartOfDayResult.atZone(ZoneId.of("UTC")).toInstant()));
+        customers.setDateOfBirth(LocalDate.from(atStartOfDayResult.atZone(ZoneId.of("UTC")).toInstant()));
         customers.setFirstname("Jane");
         customers.setIin("https://example.org/example");
         customers.setLastname("Doe");
@@ -95,7 +95,7 @@ class CustomersServiceTest {
         customers1.setAge(1);
         customers1.setCustomer_id(1);
         LocalDateTime atStartOfDayResult1 = LocalDate.of(1970, 1, 1).atStartOfDay();
-        customers1.setDateOfBirth(Date.from(atStartOfDayResult1.atZone(ZoneId.of("UTC")).toInstant()));
+        customers1.setDateOfBirth(LocalDate.from(atStartOfDayResult1.atZone(ZoneId.of("UTC")).toInstant()));
         customers1.setFirstname("Jane");
         customers1.setIin("https://example.org/example");
         customers1.setLastname("Doe");
@@ -112,7 +112,7 @@ class CustomersServiceTest {
         customers.setAge(1);
         customers.setCustomer_id(1);
         LocalDateTime atStartOfDayResult = LocalDate.of(1970, 1, 1).atStartOfDay();
-        customers.setDateOfBirth(Date.from(atStartOfDayResult.atZone(ZoneId.of("UTC")).toInstant()));
+        customers.setDateOfBirth(LocalDate.from(atStartOfDayResult.atZone(ZoneId.of("UTC")).toInstant()));
         customers.setFirstname("Jane");
         customers.setIin("https://example.org/example");
         customers.setLastname("Doe");
@@ -124,7 +124,7 @@ class CustomersServiceTest {
         customers1.setAge(1);
         customers1.setCustomer_id(1);
         LocalDateTime atStartOfDayResult1 = LocalDate.of(1970, 1, 1).atStartOfDay();
-        customers1.setDateOfBirth(Date.from(atStartOfDayResult1.atZone(ZoneId.of("UTC")).toInstant()));
+        customers1.setDateOfBirth(LocalDate.from(atStartOfDayResult1.atZone(ZoneId.of("UTC")).toInstant()));
         customers1.setFirstname("Jane");
         customers1.setIin("https://example.org/example");
         customers1.setLastname("Doe");

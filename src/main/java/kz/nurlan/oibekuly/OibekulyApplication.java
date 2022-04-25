@@ -1,28 +1,41 @@
 package kz.nurlan.oibekuly;
+import kz.nurlan.oibekuly.model.Customers;
+import kz.nurlan.oibekuly.repository.CustomersRepository;
+import kz.nurlan.oibekuly.repository.impl.CustomersRepositoryImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.jms.JmsException;
 import org.springframework.kafka.annotation.EnableKafka;
 
 import javax.jms.JMSException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
 
 @SpringBootApplication
 @EnableKafka
 public class OibekulyApplication {
 
-    public static void main(String[] args) throws JmsException, JMSException  {
+    @Autowired
+    public static CustomersRepositoryImpl customersRepositoryimpl;
+
+    public static void main(String[] args) {
+
         SpringApplication.run(OibekulyApplication.class, args);
 
-//        Customers customers = new Customers(30,"James", "Johnson", 29,
-//    "Texas","93642851537", true, new Date(1993, Calendar.JUNE, 1));
-//        System.out.println(customers.getDateOfBirth());
+        CustomersRepositoryImpl customersRepositoryimpl = new CustomersRepositoryImpl();
 
-/*        ConfigurableApplicationContext context = SpringApplication.run(OibekulyApplication.class, args);
-        JmsTemplate jmsTemplate = context.getBean(JmsTemplate.class);
-        Account account = new Account(2, 1234L, 200000d, 0.02d);
-        CustomerReceiver customerReceiver = new CustomerReceiver();
-        customerReceiver.notifyWithdrawing(20000d);*/
+        Optional<Customers> customersByAddress = customersRepositoryimpl.findByAddress("Almaty");
+        System.out.println(customersByAddress);
+
+        LocalDateTime date = LocalDate.of(1970, 1, 1).atStartOfDay();
+        String lastNamesByDate = customersRepositoryimpl.lastNamesByDate(LocalDate.from(date));
+        System.out.println(lastNamesByDate);
     }
 }
 
